@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Middle East",
+		"Script" : "middleeast.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/desert"
+		],
+		"CircularMap" : true
+	}
+}
+

@@ -1,0 +1,20 @@
+{
+	"settings" : {
+		"Name" : "Gulf v1",
+		"Script" : "gulfv1.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "nopreview.png",
+		"SupportedBiomes": [
+			"generic/temperate",
+			"generic/snowy",
+			"generic/desert",
+			"generic/alpine",
+			"generic/mediterranean",
+			"generic/tropic",
+			"generic/autumn"
+		],
+		"CircularMap" : true
+	}
+}
+
