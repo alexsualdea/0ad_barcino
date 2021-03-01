@@ -1,0 +1,11 @@
+{
+	"name": "Flare",
+	"version": "0.1",
+	"label": "Flare feature",
+	"url": "https://play0ad.com",
+	"description": "Enables flare feature. Players in the same team or allies can warn each other by placing a flare on the map. To put a flare anywhere on the explored terrain press Ctrl+Alt+Left Mouse button on the map or minimap.",
+	"dependencies": [
+		"0ad>=0.0.24",
+		"0ad<=0.0.24"
+	]
+}
