@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Salonica",
+		"Script" : "salonica.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/mediterranean"
+		],
+		"CircularMap" : true
+	}
+}
+

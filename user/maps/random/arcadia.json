@@ -1,0 +1,15 @@
+{
+	"settings" : {
+		"Name" : "Arcadia",
+		"Script" : "arcadia.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/temperate",
+			"generic/mediterranean"
+		],
+		"CircularMap" : true
+	}
+}
+
