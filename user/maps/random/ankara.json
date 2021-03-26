@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Ankara",
+		"Script" : "ankara.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/mediterranean"
+		],
+		"CircularMap" : true
+	}
+}
+

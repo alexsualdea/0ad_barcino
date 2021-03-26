@@ -1,0 +1,16 @@
+{
+	"settings" : {
+		"Name" : "Isla Esmeralda",
+		"Script" : "islaesmeralda.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/tropic",
+			"generic/temperate",
+			"generic/desert"
+		],
+		"CircularMap" : true
+	}
+}
+
