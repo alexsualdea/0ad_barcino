@@ -260,7 +260,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["normal"],
 		"mixes": ["normal"],
-		"amounts": ["normal"]
+		"amounts": [getRandomAmount()]
 	},
 	{
 		"func": addSmallMetal,
@@ -324,7 +324,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["small"],
 		"mixes": ["normal"],
-		"amounts": ["tons"]
+		"amounts": [getRandomAmount()]
 	},
 	{
 		"func": addStragglerTrees,
@@ -340,7 +340,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["normal"],
 		"mixes": ["normal"],
-		"amounts": ["some"]
+		"amounts": [getRandomAmount()]
 	},
 	{
 		"func": addLayeredPatches,
@@ -354,7 +354,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["normal"],
 		"mixes": ["normal"],
-		"amounts": ["tons"]
+		"amounts": [getRandomAmount()]
 	},
 	{
 		"func": addDecoration,
@@ -367,7 +367,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["small"],
 		"mixes": ["same"],
-		"amounts": ["normal"]
+		"amounts": [getRandomAmount()]
 	}
 ]);
 

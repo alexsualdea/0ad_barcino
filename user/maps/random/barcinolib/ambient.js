@@ -123,5 +123,48 @@ function setAmbient(biome)
     }
 }
 
+function getRandomArbitrary(min, max) 
+{
+    return Math.random() * (max - min) + min;
+}
+
+function randomAmount()
+{
+    var r = getRandomArbitrary(0, 5);
+    print("randomAmount=" + r);
+    if (r > 0 && r < 1)
+        return "scarce";
+    else if (r > 1 && r < 2)
+        return "few";
+    else if (r > 2 && r < 3)
+        return "normal";
+    else if (r > 3 && r < 4)
+        return "many";
+    else if (r > 4 && r < 5)
+        return "tons";
+    else
+        return "normal";
+}
+
+function randomSize()
+{
+    var r = getRandomArbitrary(0, 5);
+    print("randomSize=" + r);
+    if (r > 0 && r < 1)
+        return "tiny";
+    else if (r > 1 && r < 2)
+        return "small";
+    else if (r > 2 && r < 3)
+        return "normal";
+    else if (r > 3 && r < 4)
+        return "big";
+    else if (r > 4 && r < 5)
+        return "huge";
+    else
+        return "normal";
+}
+
+
+
 
 
