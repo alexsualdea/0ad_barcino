@@ -324,7 +324,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["small"],
 		"mixes": ["normal"],
-		"amounts": [getRandomAmount()]
+		"amounts": [randomAmount()]
 	},
 	{
 		"func": addStragglerTrees,
@@ -340,7 +340,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["normal"],
 		"mixes": ["normal"],
-		"amounts": [getRandomAmount()]
+		"amounts": [randomAmount()]
 	},
 	{
 		"func": addLayeredPatches,
@@ -354,7 +354,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["normal"],
 		"mixes": ["normal"],
-		"amounts": [getRandomAmount()]
+		"amounts": [randomAmount()]
 	},
 	{
 		"func": addDecoration,

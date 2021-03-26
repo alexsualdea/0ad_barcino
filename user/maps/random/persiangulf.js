@@ -367,7 +367,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["small"],
 		"mixes": ["same"],
-		"amounts": [getRandomAmount()]
+		"amounts": [randomAmount()]
 	}
 ]);
 

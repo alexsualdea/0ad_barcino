@@ -252,7 +252,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["same"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 		{
 			"func": addStone,
@@ -268,7 +268,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["same"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 		{
 			"func": addForests,
@@ -284,7 +284,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["normal"],
-			"amounts": [getRandomAmount()]
+			"amounts": ["normal", "many"]
 		},
 		{
 			"func": addSmallMetal,
@@ -316,7 +316,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["normal"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 		{
 			"func": addAnimals,
@@ -332,7 +332,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["normal"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 				{
 			"func": addAnimals,
@@ -348,7 +348,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["small"],
 			"mixes": ["normal"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 		{
 			"func": addStragglerTrees,
@@ -364,7 +364,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["normal"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 		{
 			"func": addLayeredPatches,
@@ -378,7 +378,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["normal"],
 			"mixes": ["normal"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		},
 		{
 			"func": addDecoration,
@@ -391,7 +391,7 @@ for (let zone of climateZones)
 			"stay": [zone.tileClass, 0],
 			"sizes": ["small"],
 			"mixes": ["same"],
-			"amounts": [getRandomAmount()]
+			"amounts": [randomAmount()]
 		}
 	]);
 }
@@ -429,7 +429,7 @@ addElements([
 		"stay": [g_TileClasses.water, 4],
 		"sizes": ["normal"],
 		"mixes": ["similar"],
-		"amounts": [getRandomAmount()]
+		"amounts": [randomAmount()]
 	}
 ]);
 Engine.SetProgress(85);
