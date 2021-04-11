@@ -1,0 +1,20 @@
+{
+	"settings" : {
+		"Name" : "Hiberus Flumen",
+		"Script" : "hiberusflumen.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/temperate",
+			"generic/snowy",
+			"generic/desert",
+			"generic/alpine",
+			"generic/mediterranean",
+			"generic/tropic",
+			"generic/autumn"
+		],
+		"CircularMap" : true
+	}
+}
+
