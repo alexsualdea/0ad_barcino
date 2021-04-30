@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Girba",
+		"Script" : "girba.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/desert"
+		],
+		"CircularMap" : true
+	}
+}
+
