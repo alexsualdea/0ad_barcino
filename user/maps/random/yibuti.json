@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Yibuti",
+		"Script" : "yibuti.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/desert"
+		],
+		"CircularMap" : true
+	}
+}
+
