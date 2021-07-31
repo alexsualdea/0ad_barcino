@@ -1,0 +1,20 @@
+{
+	"settings" : {
+		"Name" : "Lapurdum",
+		"Script" : "Lapurdum.js",
+		"Description" : "Current Bayona, France",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/temperate",
+			"generic/snowy",
+			"generic/desert",
+			"generic/alpine",
+			"generic/mediterranean",
+			"generic/tropic",
+			"generic/autumn"
+		],
+		"CircularMap" : true
+	}
+}
+

@@ -21,9 +21,9 @@ Engine.LoadLibrary("barcinolib");
 
 TILE_CENTERED_HEIGHT_MAP = true;
 
-const heightfile = "random_template.png";
+const heightfile = "bissagos.png";
 const normalMinHeight = 0; // set to 0 to have water
-const normalMaxHeight = 30; // like a height 'multiplier'. more bigger, more mountains
+const normalMaxHeight = 10; // like a height 'multiplier'. more bigger, more mountains
 
 const heightScale = num => num * g_MapSettings.Size / 320;
 
@@ -47,6 +47,7 @@ var selectedBiome = undefined;
 //"generic/tropic",
 //"generic/autumn"
 //selectedBiome = "generic/autumn";
+
 
 Engine.SetProgress(10);
 
@@ -159,31 +160,6 @@ createLayeredPatches(
 	g_TileClasses.dirt);
 
 
-Engine.SetProgress(45);
-
-if (!isNomad())
-{
-	g_Map.log("Finding player positions");
-
-	let [playerIDs, playerPosition] = playerPlacementRandom(
-		sortAllPlayers(),
-		[
-			avoidClasses(g_TileClasses.mountain, 5),
-			stayClasses(g_TileClasses.land, scaleByMapSize(8, 25))
-		]);
-
-	g_Map.log("Flatten the initial CC area and placing playerbases");
-	for (let i = 0; i < getNumPlayers(); ++i)
-	{
-		g_Map.logger.printDuration();
-
-		createArea(
-			new ClumpPlacer(diskArea(defaultPlayerBaseRadius() * 0.8), 0.95, 0.6, Infinity, playerPosition[i]),
-			new SmoothElevationPainter(ELEVATION_SET, g_Map.getHeight(playerPosition[i]), 6));
-
-		createBase(playerIDs[i], playerPosition[i], mapSize >= 384);
-	}
-}
 Engine.SetProgress(50);
 
 
@@ -457,8 +433,8 @@ addElements([
 			g_TileClasses.fish, 10,
 		],
 		"stay": [g_TileClasses.water, 4],
-		"sizes": ["many"],
-		"mixes": ["normal"],
+		"sizes": ["normal"],
+		"mixes": ["similar"],
 		"amounts": [randomAmount()]
 	}
 ]);
@@ -481,7 +457,7 @@ addElements([
 ]);
 Engine.SetProgress(95);
 
-placePlayersNomad(
+forcePlacePlayersNomad(
 	g_Map.createTileClass(),
 	[
 		stayClasses(g_TileClasses.land, 5),

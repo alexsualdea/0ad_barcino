@@ -21,7 +21,7 @@ Engine.LoadLibrary("barcinolib");
 
 TILE_CENTERED_HEIGHT_MAP = true;
 
-const heightfile = "random_template.png";
+const heightfile = "mopti.png";
 const normalMinHeight = 0; // set to 0 to have water
 const normalMaxHeight = 30; // like a height 'multiplier'. more bigger, more mountains
 
@@ -46,7 +46,7 @@ var selectedBiome = undefined;
 //"generic/mediterranean",
 //"generic/tropic",
 //"generic/autumn"
-//selectedBiome = "generic/autumn";
+selectedBiome = "generic/desert";
 
 Engine.SetProgress(10);
 
@@ -457,8 +457,8 @@ addElements([
 			g_TileClasses.fish, 10,
 		],
 		"stay": [g_TileClasses.water, 4],
-		"sizes": ["many"],
-		"mixes": ["normal"],
+		"sizes": ["normal"],
+		"mixes": ["similar"],
 		"amounts": [randomAmount()]
 	}
 ]);

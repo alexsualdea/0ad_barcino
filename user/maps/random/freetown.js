@@ -21,7 +21,7 @@ Engine.LoadLibrary("barcinolib");
 
 TILE_CENTERED_HEIGHT_MAP = true;
 
-const heightfile = "random_template.png";
+const heightfile = "freetown.png";
 const normalMinHeight = 0; // set to 0 to have water
 const normalMaxHeight = 30; // like a height 'multiplier'. more bigger, more mountains
 
@@ -474,9 +474,9 @@ addElements([
 			g_TileClasses.mapTile, 50
 		],
 		"stay": [g_TileClasses.water, 7],
-		"sizes": ["small"],
+		"sizes": ["normal"],
 		"mixes": ["same"],
-		"amounts": ["scarce"]
+		"amounts": ["few"]
 	}
 ]);
 Engine.SetProgress(95);

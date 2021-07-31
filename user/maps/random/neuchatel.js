@@ -21,9 +21,9 @@ Engine.LoadLibrary("barcinolib");
 
 TILE_CENTERED_HEIGHT_MAP = true;
 
-const heightfile = "random_template.png";
+const heightfile = "neuchatel.png";
 const normalMinHeight = 0; // set to 0 to have water
-const normalMaxHeight = 30; // like a height 'multiplier'. more bigger, more mountains
+const normalMaxHeight = 60; // like a height 'multiplier'. more bigger, more mountains
 
 const heightScale = num => num * g_MapSettings.Size / 320;
 

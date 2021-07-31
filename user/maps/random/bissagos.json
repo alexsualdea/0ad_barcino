@@ -1,0 +1,20 @@
+{
+	"settings" : {
+		"Name" : "Bissagos Islands (nomad)",
+		"Script" : "bissagos.js",
+		"Description" : "Play it nomad",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/temperate",
+			"generic/snowy",
+			"generic/desert",
+			"generic/alpine",
+			"generic/mediterranean",
+			"generic/tropic",
+			"generic/autumn"
+		],
+		"CircularMap" : true
+	}
+}
+

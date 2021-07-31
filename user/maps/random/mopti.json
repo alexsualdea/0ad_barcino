@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Mopti",
+		"Script" : "mopti.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/desert"
+		],
+		"CircularMap" : true
+	}
+}
+

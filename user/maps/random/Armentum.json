@@ -1,0 +1,20 @@
+{
+	"settings" : {
+		"Name" : "Armentum",
+		"Script" : "Armentum.js",
+		"Description" : "Current Vitoria-Gasteiz, Spain",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/temperate",
+			"generic/snowy",
+			"generic/desert",
+			"generic/alpine",
+			"generic/mediterranean",
+			"generic/tropic",
+			"generic/autumn"
+		],
+		"CircularMap" : true
+	}
+}
+
