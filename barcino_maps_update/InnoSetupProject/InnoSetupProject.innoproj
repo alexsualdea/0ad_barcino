@@ -1,0 +1,33 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>1.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1fdb6bff-484e-4257-b9fc-4c3521bbb2a3</ProjectGuid>
+    <AssemblyName>InnoSetupProject</AssemblyName>
+    <Name>InnoSetupProject</Name>
+    <RootNamespace>InnoSetupProject</RootNamespace>
+    <InnoSetupPath>C:\Program Files (x86)\Inno Setup 6\</InnoSetupPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>
+    </OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>
+    </OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="InstallScript.iss">
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\barcino_maps_update\BarcinoMapsUpdate.csproj">
+      <Name>BarcinoMapsUpdate</Name>
+      <Project>{9e71637e-ea60-42bd-9f2f-9a65f3bfae26}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\InnoSetupTools\InnoSetupProject.targets" />
+</Project>
