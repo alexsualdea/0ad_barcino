@@ -63,8 +63,10 @@ namespace BarcinoMapsUpdate
                 try
                 {
                     FileInfo fi = new FileInfo(localFilename);
-                    wc.DownloadFileCompleted += (sender, e) => { updateProgress(fi, true); };
-                    wc.DownloadFileAsync(new Uri(remoteFileName), localFilename);
+                    //wc.DownloadFileCompleted += (sender, e) => {  };
+                    //wc.DownloadFileAsync(new Uri(remoteFileName), localFilename);
+                    wc.DownloadFile(new Uri(remoteFileName), localFilename);
+                    updateProgress(fi, true);
                     return true;
                 }
                 catch (Exception ex)
@@ -81,7 +83,7 @@ namespace BarcinoMapsUpdate
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("BarcinoMapsUpdate", "0.1"));
             httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Token", "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");
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Token", "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");
             var contentsUrl = baseUrl;
             var contentsJson = await httpClient.GetStringAsync(contentsUrl);
             var contents = (Newtonsoft.Json.Linq.JArray)JsonConvert.DeserializeObject(contentsJson);
@@ -152,7 +154,7 @@ namespace BarcinoMapsUpdate
                         string localSha = await GetHashSha1FrikadaDeGithub(localPath);
                         if (localSha != f.sha)
                         {
-                            System.Threading.Thread.Sleep(50); // without this sleep some files are missing
+                            //System.Threading.Thread.Sleep(50); // without this sleep some files are missing
                             bool ok = await downloadFile(f.remotePath, localPath);
                             if (!ok)
                                 break;
