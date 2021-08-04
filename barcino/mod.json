@@ -1,0 +1,8 @@
+{
+	"name": "barcino",
+	"version": "0.1",
+	"label": "Barcino Mod",
+	"url": "https://play0ad.com",
+	"description": "Changes some aspects to make the game experience more amusing.",
+	"dependencies": ["0ad=0.0.24"]
+}
