@@ -4,5 +4,5 @@
 	"label": "Barcino Mod",
 	"url": "https://play0ad.com",
 	"description": "Changes some aspects to make the game experience more amusing.",
-	"dependencies": ["0ad=0.0.24"]
+	"dependencies": ["0ad=0.0.25"]
 }

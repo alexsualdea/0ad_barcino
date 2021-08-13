@@ -172,6 +172,7 @@ class Barcino
     }
 
     /**
+     * OBSOLETE?
      * Gets "team proportion" when trading between markets of the same team
      * @param {*} market1 
      * @param {*} market2 
