@@ -1,4 +1,4 @@
-/**
+/***
  * How to integrate a heightmap:
  * 1. Download a terrain from https://terrain.party/ (or others)
  * 2. Using the file named *(ASTER 30m)* execute: magick "whatever Height Map (ASTER 30m).png" -resize 512 -contrast-stretch 0 -level 30% whatever.png
