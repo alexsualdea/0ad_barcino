@@ -119,7 +119,7 @@ PETRA.AttackPlan = function(gameState, Config, uniqueID, type, data)
 		priority = 250;
 		this.unitStat.Infantry = { "priority": 1, "minSize": 10, "targetSize": 20, "batchSize": 2, "classes": ["Infantry"],
 			"interests": [["strength", 1], ["costsResource", 0.5, "stone"], ["costsResource", 0.6, "metal"]] };
-		this.unitStat.FastMoving = { "priority": 1, "minSize": 2, "targetSize": 4, "batchSize": 2, "classes": ["FastMoving", "CitizenSoldier"],
+		this.unitStat.FastMoving = { "priority": 1, "minSize": 2, "targetSize": 4, "batchSize": 2, "classes": ["FastMoving+CitizenSoldier"],
 			"interests": [["strength", 1]] };
 		if (data && data.targetSize)
 			this.unitStat.Infantry.targetSize = data.targetSize;
@@ -128,7 +128,7 @@ PETRA.AttackPlan = function(gameState, Config, uniqueID, type, data)
 	else if (type == "Raid")
 	{
 		priority = 150;
-		this.unitStat.FastMoving = { "priority": 1, "minSize": 3, "targetSize": 4, "batchSize": 2, "classes": ["FastMoving", "CitizenSoldier"],
+		this.unitStat.FastMoving = { "priority": 1, "minSize": 3, "targetSize": 4, "batchSize": 2, "classes": ["FastMoving+CitizenSoldier"],
 			"interests": [ ["strength", 1] ] };
 		this.neededShips = 1;
 	}
@@ -136,21 +136,23 @@ PETRA.AttackPlan = function(gameState, Config, uniqueID, type, data)
 	{
 		priority = 90;
 		// basically we want a mix of citizen soldiers so our barracks have a purpose, and champion units.
-		this.unitStat.RangedInfantry = { "priority": 0.7, "minSize": 5, "targetSize": 20, "batchSize": 5, "classes": ["Infantry", "Ranged", "CitizenSoldier"],
+		this.unitStat.RangedInfantry = { "priority": 0.7, "minSize": 5, "targetSize": 20, "batchSize": 5, "classes": ["Infantry+Ranged+CitizenSoldier"],
 			"interests": [["strength", 3]] };
-		this.unitStat.MeleeInfantry = { "priority": 0.7, "minSize": 5, "targetSize": 20, "batchSize": 5, "classes": ["Infantry", "Melee", "CitizenSoldier"],
+		this.unitStat.MeleeInfantry = { "priority": 0.7, "minSize": 5, "targetSize": 20, "batchSize": 5, "classes": ["Infantry+Melee+CitizenSoldier"],
 			"interests": [["strength", 3]] };
-		this.unitStat.ChampRangedInfantry = { "priority": 1, "minSize": 3, "targetSize": 18, "batchSize": 3, "classes": ["Infantry", "Ranged", "Champion"],
+		this.unitStat.ChampRangedInfantry = { "priority": 1, "minSize": 3, "targetSize": 18, "batchSize": 3, "classes": ["Infantry+Ranged+Champion"],
 			"interests": [["strength", 3]] };
-		this.unitStat.ChampMeleeInfantry = { "priority": 1, "minSize": 3, "targetSize": 18, "batchSize": 3, "classes": ["Infantry", "Melee", "Champion"],
+		this.unitStat.ChampMeleeInfantry = { "priority": 1, "minSize": 3, "targetSize": 18, "batchSize": 3, "classes": ["Infantry+Melee+Champion"],
 			"interests": [["strength", 3]] };
-		this.unitStat.RangedFastMoving = { "priority": 0.7, "minSize": 4, "targetSize": 20, "batchSize": 4, "classes": ["FastMoving", "Ranged", "CitizenSoldier"],
+		this.unitStat.RangedFastMoving = { "priority": 0.7, "minSize": 4, "targetSize": 20, "batchSize": 4, "classes": ["FastMoving+Ranged+CitizenSoldier"],
 			"interests": [["strength", 2]] };
-		this.unitStat.MeleeFastMoving = { "priority": 0.7, "minSize": 4, "targetSize": 20, "batchSize": 4, "classes": ["FastMoving", "Melee", "CitizenSoldier"],
+		this.unitStat.MeleeFastMoving = { "priority": 0.7, "minSize": 4, "targetSize": 20, "batchSize": 4, "classes": ["FastMoving+Melee+CitizenSoldier"],
 			"interests": [["strength", 2]] };
-		this.unitStat.ChampRangedFastMoving = { "priority": 1, "minSize": 3, "targetSize": 15, "batchSize": 3, "classes": ["FastMoving", "Ranged", "Champion"],
+		this.unitStat.ChampRangedFastMoving = { "priority": 1, "minSize": 3, "targetSize": 15, "batchSize": 3, "classes": ["FastMoving+Ranged+Champion"],
 			"interests": [["strength", 3]] };
-		this.unitStat.ChampMeleeFastMoving = { "priority": 1, "minSize": 3, "targetSize": 15, "batchSize": 3, "classes": ["FastMoving", "Melee", "Champion"],
+		this.unitStat.ChampMeleeFastMoving = { "priority": 1, "minSize": 3, "targetSize": 15, "batchSize": 3, "classes": ["FastMoving+Melee+Champion"],
+			"interests": [["strength", 2]] };
+		this.unitStat.Hero = { "priority": 1, "minSize": 0, "targetSize": 1, "batchSize": 1, "classes": ["Hero"],
 			"interests": [["strength", 2]] };
 		// AQUI avoid attacking with hero in regicide mode
 		if (!gameState.getVictoryConditions().has("regicide"))
@@ -161,11 +163,11 @@ PETRA.AttackPlan = function(gameState, Config, uniqueID, type, data)
 	else
 	{
 		priority = 70;
-		this.unitStat.RangedInfantry = { "priority": 1, "minSize": 6, "targetSize": 16, "batchSize": 3, "classes": ["Infantry", "Ranged"],
+		this.unitStat.RangedInfantry = { "priority": 1, "minSize": 6, "targetSize": 16, "batchSize": 3, "classes": ["Infantry+Ranged"],
 			"interests": [["canGather", 1], ["strength", 1.6], ["costsResource", 0.3, "stone"], ["costsResource", 0.3, "metal"]] };
-		this.unitStat.MeleeInfantry = { "priority": 1, "minSize": 6, "targetSize": 16, "batchSize": 3, "classes": ["Infantry", "Melee"],
+		this.unitStat.MeleeInfantry = { "priority": 1, "minSize": 6, "targetSize": 16, "batchSize": 3, "classes": ["Infantry+Melee"],
 			"interests": [["canGather", 1], ["strength", 1.6], ["costsResource", 0.3, "stone"], ["costsResource", 0.3, "metal"]] };
-		this.unitStat.FastMoving = { "priority": 1, "minSize": 2, "targetSize": 6, "batchSize": 2, "classes": ["FastMoving", "CitizenSoldier"],
+		this.unitStat.FastMoving = { "priority": 1, "minSize": 2, "targetSize": 6, "batchSize": 2, "classes": ["FastMoving+CitizenSoldier"],
 			"interests": [["strength", 1]] };
 		this.neededShips = 3;
 	}
@@ -175,25 +177,38 @@ PETRA.AttackPlan = function(gameState, Config, uniqueID, type, data)
 	// and lower priority and smaller sizes for easier difficulty levels
 	if (this.Config.difficulty < 2)
 	{
-		priority *= 0.6;
-		variation *= 0.5;
+		priority *= 0.4;
+		variation *= 0.2;
 	}
 	else if (this.Config.difficulty < 3)
 	{
 		priority *= 0.8;
-		variation *= 0.8;
+		variation *= 0.6;
 	}
-	for (let cat in this.unitStat)
+
+	if (this.Config.difficulty < 2)
 	{
-		this.unitStat[cat].targetSize = Math.round(variation * this.unitStat[cat].targetSize);
-		this.unitStat[cat].minSize = Math.min(this.unitStat[cat].minSize, this.unitStat[cat].targetSize);
+		for (const cat in this.unitStat)
+		{
+			this.unitStat[cat].targetSize = Math.ceil(variation * this.unitStat[cat].targetSize);
+			this.unitStat[cat].minSize = Math.min(this.unitStat[cat].targetSize, Math.min(this.unitStat[cat].minSize, 2));
+			this.unitStat[cat].batchSize = this.unitStat[cat].minSize;
+		}
+	}
+	else
+	{
+		for (const cat in this.unitStat)
+		{
+			this.unitStat[cat].targetSize = Math.ceil(variation * this.unitStat[cat].targetSize);
+			this.unitStat[cat].minSize = Math.min(this.unitStat[cat].minSize, this.unitStat[cat].targetSize);
+		}
 	}
 
 	// change the sizes according to max population
 	this.neededShips = Math.ceil(this.Config.popScaling * this.neededShips);
 	for (let cat in this.unitStat)
 	{
-		this.unitStat[cat].targetSize = Math.round(this.Config.popScaling * this.unitStat[cat].targetSize);
+		this.unitStat[cat].targetSize = Math.ceil(this.Config.popScaling * this.unitStat[cat].targetSize);
 		this.unitStat[cat].minSize = Math.ceil(this.Config.popScaling * this.unitStat[cat].minSize);
 	}
 
@@ -232,13 +247,10 @@ PETRA.AttackPlan.prototype.init = function(gameState)
 	for (let cat in this.unitStat)
 	{
 		let Unit = this.unitStat[cat];
-		this.unit[cat] = this.unitCollection.filter(API3.Filters.byClassesAnd(Unit.classes));
+		this.unit[cat] = this.unitCollection.filter(API3.Filters.byClasses(Unit.classes));
 		this.unit[cat].registerUpdates();
 		if (this.canBuildUnits)
-		{
-			print("this.buildOrders.push -> Unit.classes=" + Unit.classes + " this.unit[cat]=" + this.unit[cat] + " cat=" + cat);
 			this.buildOrders.push([0, Unit.classes, this.unit[cat], Unit, cat]);
-		}
 	}
 };
 
@@ -346,9 +358,8 @@ PETRA.AttackPlan.prototype.addBuildOrder = function(gameState, name, unitStats, 
 		// no minsize as we don't want the plan to fail at the last minute though.
 		this.unitStat[name] = unitStats;
 		let Unit = this.unitStat[name];
-		this.unit[name] = this.unitCollection.filter(API3.Filters.byClassesAnd(Unit.classes));
+		this.unit[name] = this.unitCollection.filter(API3.Filters.byClasses(Unit.classes));
 		this.unit[name].registerUpdates();
-		Debug.print("this.buildOrders.push (2) -> Unit.classes=" + Unit.classes + " this.unit[name]=" + this.unit[name] + " name=" + name);
 		this.buildOrders.push([0, Unit.classes, this.unit[name], Unit, name]);
 		if (resetQueue)
 			this.emptyQueues();
@@ -361,7 +372,7 @@ PETRA.AttackPlan.prototype.addSiegeUnits = function(gameState)
 		return false;
 
 	let civ = gameState.getPlayerCiv();
-	let classes = [["Siege", "Melee"], ["Siege", "Ranged"], ["Elephant", "Melee"]];
+	const classes = [["Siege+Melee"], ["Siege+Ranged"], ["Elephant+Melee"]];
 	let hasTrainer = [false, false, false];
 	for (let ent of gameState.getOwnTrainingFacilities().values())
 	{
@@ -376,7 +387,7 @@ PETRA.AttackPlan.prototype.addSiegeUnits = function(gameState)
 			if (!template || !template.available(gameState))
 				continue;
 			for (let i = 0; i < classes.length; ++i)
-				if (classes[i].every(c => template.hasClass(c)))
+				if (template.hasClasses(classes[i]))
 					hasTrainer[i] = true;
 		}
 	}
@@ -618,8 +629,7 @@ PETRA.AttackPlan.prototype.trainMoreUnits = function(gameState)
 	{
 		// find the actual queue we want
 		let queue = this.queue;
-		if (firstOrder[3].classes.indexOf("Siege") != -1 || firstOrder[3].classes.indexOf("Elephant") != -1 &&
-		    firstOrder[3].classes.indexOf("Melee") != -1 && firstOrder[3].classes.indexOf("Champion") != -1)
+		if (firstOrder[4] == "Siege")
 			queue = this.queueSiege;
 		else if (firstOrder[3].classes.indexOf("Hero") != -1)
 			queue = this.queueSiege;
@@ -668,11 +678,6 @@ PETRA.AttackPlan.prototype.assignUnits = function(gameState)
 		{
 			if (ent.getMetadata(PlayerID, "allied") || !this.isAvailableUnit(gameState, ent))
 				continue;
-			if (gameState.getVictoryConditions().has("regicide") && ent.hasClass("Hero"))
-			{
-				continue;
-			}
-			Debug.print("Assign to plan: " + ent);
 			ent.setMetadata(PlayerID, "plan", plan);
 			this.unitCollection.updateEnt(ent);
 			added = true;
@@ -705,15 +710,10 @@ PETRA.AttackPlan.prototype.assignUnits = function(gameState)
 	// Assign all units without specific role.
 	for (let ent of gameState.getOwnEntitiesByRole(undefined, true).values())
 	{
-		if (!ent.hasClass("Unit") || !this.isAvailableUnit(gameState, ent))
+		if (ent.hasClasses(["!Unit", "Ship", "Support"]) ||
+			!this.isAvailableUnit(gameState, ent) ||
+			ent.attackTypes() === undefined)
 			continue;
-		if (ent.hasClass("Ship") || ent.hasClass("Support") || ent.attackTypes() === undefined)
-			continue;
-		if (gameState.getVictoryConditions().has("regicide") && ent.hasClass("Hero"))
-		{
-			continue;
-		}
-		Debug.print("Assign to plan3: " + ent);
 		ent.setMetadata(PlayerID, "plan", plan);
 		this.unitCollection.updateEnt(ent);
 		added = true;
@@ -723,29 +723,27 @@ PETRA.AttackPlan.prototype.assignUnits = function(gameState)
 	{
 		if (!this.isAvailableUnit(gameState, ent))
 			continue;
-		if (gameState.getVictoryConditions().has("regicide") && ent.hasClass("Hero"))
-		{
-			continue;
-		}
-		Debug.print("Assign to plan4: " + ent);
 		ent.setMetadata(PlayerID, "plan", plan);
 		this.unitCollection.updateEnt(ent);
 		added = true;
 	}
 
-	// Finally add also some workers,
+	// Finally add also some workers for the higher difficulties,
 	// If Rush, assign all kind of workers, keeping only a minimum number of defenders
 	// Otherwise, assign only some idle workers if too much of them
+	if (this.Config.difficulty <= 2)
+		return added;
+
 	let num = 0;
-	let numbase = {};
+	const numbase = {};
 	let keep = this.type != "Rush" ?
 		6 + 4 * gameState.getNumPlayerEnemies() + 8 * this.Config.personality.defensive : 8;
 	keep = Math.round(this.Config.popScaling * keep);
-	for (let ent of gameState.getOwnEntitiesByRole("worker", true).values())
+	for (const ent of gameState.getOwnEntitiesByRole("worker", true).values())
 	{
 		if (!ent.hasClass("CitizenSoldier") || !this.isAvailableUnit(gameState, ent))
 			continue;
-		let baseID = ent.getMetadata(PlayerID, "base");
+		const baseID = ent.getMetadata(PlayerID, "base");
 		if (baseID)
 			numbase[baseID] = numbase[baseID] ? ++numbase[baseID] : 1;
 		else
@@ -758,11 +756,6 @@ PETRA.AttackPlan.prototype.assignUnits = function(gameState)
 			continue;
 		if (this.type != "Rush" && ent.getMetadata(PlayerID, "subrole") != "idle")
 			continue;
-		if (gameState.getVictoryConditions().has("regicide") && ent.hasClass("Hero"))
-		{
-			continue;
-		}
-		Debug.print("Assign to plan5: " + ent);
 		ent.setMetadata(PlayerID, "plan", plan);
 		this.unitCollection.updateEnt(ent);
 		added = true;
@@ -789,14 +782,9 @@ PETRA.AttackPlan.prototype.reassignFastUnit = function(gameState)
 	{
 		if (!ent.position() || ent.getMetadata(PlayerID, "transport") !== undefined)
 			continue;
-		if (!ent.hasClass("FastMoving") || !ent.hasClass("CitizenSoldier"))
+		if (!ent.hasClasses(["FastMoving", "CitizenSoldier"]))
 			continue;
 		let raid = gameState.ai.HQ.attackManager.getAttackInPreparation("Raid");
-		if (gameState.getVictoryConditions().has("regicide") && ent.hasClass("Hero"))
-		{
-			continue;
-		}
-		print("Assign to raid '" + raid.name + "': " + ent);
 		ent.setMetadata(PlayerID, "plan", raid.name);
 		this.unitCollection.updateEnt(ent);
 		raid.unitCollection.updateEnt(ent);
@@ -1439,7 +1427,7 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 							if (orderData[0].target === attacker.id())
 								continue;
 							let target = gameState.getEntityById(orderData[0].target);
-							if (target && !target.hasClass("Structure") && !target.hasClass("Support"))
+							if (target && !target.hasClasses(["Structure", "Support"]))
 								continue;
 						}
 						ent.attack(attacker.id(), allowCapture);
@@ -1453,7 +1441,7 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 						if (orderData[0].target === attacker.id())
 							continue;
 						let target = gameState.getEntityById(orderData[0].target);
-						if (target && !target.hasClass("Structure") && !target.hasClass("Support"))
+						if (target && !target.hasClasses(["Structure", "Support"]))
 						{
 							if (!target.hasClass("Ranged") || !attacker.hasClass("Melee"))
 								continue;
@@ -1472,9 +1460,6 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 		let enemyUnits = gameState.getEnemyUnits(this.targetPlayer);
 		let enemyStructures = gameState.getEnemyStructures(this.targetPlayer);
 
-		Debug.print("this.target._templateName=" + this.target._templateName);
-		Debug.print("this.target._classes=" + this.target._templateName._classes);
-
 		// Count the number of times an enemy is targeted, to prevent all units to follow the same target
 		let unitTargets = {};
 		for (let ent of this.unitCollection.values())
@@ -1492,7 +1477,7 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 			{
 				if (PETRA.isSiegeUnit(target) || target.hasClass("Hero"))
 					unitTargets[targetId] = -8;
-				else if (target.hasClass("Champion") || target.hasClass("Ship"))
+				else if (target.hasClasses(["Champion", "Ship"]))
 					unitTargets[targetId] = -5;
 				else
 					unitTargets[targetId] = -3;
@@ -1511,20 +1496,11 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 		else
 		{
 			if (this.target.hasClass("Fortress"))
-			{
-				Debug.print("targetClassesUnit: 1");
 				targetClassesUnit = { "attack": ["Unit", "Structure"], "avoid": ["Palisade", "Wall"], "vetoEntities": veto };
-			}
-			else if (this.target.hasClass("Palisade") || this.target.hasClass("Wall"))
-			{
-				Debug.print("targetClassesUnit: 2");
+			else if (this.target.hasClasses(["Palisade", "Wall"]))
 				targetClassesUnit = { "attack": ["Unit", "Structure"], "avoid": ["Fortress"], "vetoEntities": veto };
-			}
 			else
-			{
-				Debug.print("targetClassesUnit: 3");
 				targetClassesUnit = { "attack": ["Unit", "Structure"], "avoid": ["Palisade", "Wall", "Fortress"], "vetoEntities": veto };
-			}
 		}
 
 		if (this.target.hasClass("Structure"))
@@ -1541,10 +1517,7 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 			}
 		}
 		else
-		{
-			Debug.print("targetClassesSiege: 3");
-			targetClassesSiege = { "attack": ["Unit", "Structure"], "avoid": [], "vetoEntities": veto }; 
-		}
+			targetClassesSiege = { "attack": ["Unit", "Structure"], "avoid": [], "vetoEntities": veto };
 
 		// do not loose time destroying buildings which do not help enemy's defense and can be easily captured later
 		if (this.target.hasDefensiveFire())
@@ -1729,28 +1702,24 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 					}
 					else
 					{
-						if (mStruct[0].hasClass("Gate"))
-						{
-							Debug.print("siege attack: (gate) mStruct.length >0 -> mStuct[0]=" + mStruct[0]);
-							ent.attack(mStruct[0].id(), PETRA.allowCapture(gameState, ent, mStruct[0]));
-						}
-
-						else
-						{
-							Debug.print("siege attack: (else) mStruct.length >0 -> mStuct[0]=" + mStruct[0]);
-							let rand = randIntExclusive(0, mStruct.length * 0.2);
-							ent.attack(mStruct[rand].id(), PETRA.allowCapture(gameState, ent, mStruct[rand]));
-						}
+						let rand = randIntExclusive(0, mStruct.length * 0.2);
+						ent.attack(mStruct[rand].id(), PETRA.allowCapture(gameState, ent, mStruct[rand]));
 					}
 				}
 				else
 				{
-					this.siegeAttackAnything(ent, targetClassesSiege, veto);
+					if (!ent.hasClass("Ranged"))
+					{
+						let targetClasses = { "attack": targetClassesSiege.attack, "avoid": targetClassesSiege.avoid.concat("Ship"), "vetoEntities": veto };
+						ent.attackMove(this.targetPos[0], this.targetPos[1], targetClasses);
+					}
+					else
+						ent.attackMove(this.targetPos[0], this.targetPos[1], targetClassesSiege);
 				}
 			} // if (siegeUnit)
 			else
 			{
-				let nearby = !ent.hasClass("FastMoving") && !ent.hasClass("Ranged");
+				const nearby = !ent.hasClasses(["FastMoving", "Ranged"]);
 				let mUnit = enemyUnits.filter(enemy => {
 					if (!enemy.position() || !ent.canAttackTarget(enemy, PETRA.allowCapture(gameState, ent, enemy)))
 						return false;
@@ -1773,10 +1742,10 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 				{
 					mUnit.sort((unitA, unitB) => {
 						let vala = unitA.hasClass("Support") ? 50 : 0;
-						if (ent.countersClasses(unitA.classes()))
+						if (ent.counters(unitA))
 							vala += 100;
 						let valb = unitB.hasClass("Support") ? 50 : 0;
-						if (ent.countersClasses(unitB.classes()))
+						if (ent.counters(unitB))
 							valb += 100;
 						let distA = unitA.getMetadata(PlayerID, "distance");
 						let distB = unitB.getMetadata(PlayerID, "distance");
@@ -1830,24 +1799,19 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 				// This may prove dangerous as we may be blocked by something we
 				// cannot attack. See similar behaviour at #5741.
 				else if (this.isBlocked && ent.canAttackTarget(this.target, false))
-				{
-					Debug.print("unit attack/capture: this.isBlocked -> ent.attack("  + this.target.id() + ", false)");
 					ent.attack(this.target.id(), false);
-				}
-				else if (API3.SquareVectorDistance(this.targetPos, ent.position()) > 10000) // AQUI 2500
+				else if (API3.SquareVectorDistance(this.targetPos, ent.position()) > 2500)
 				{
 					let targetClasses = targetClassesUnit;
 					if (maybeUpdate && ent.unitAIState() === "INDIVIDUAL.COMBAT.APPROACHING")	// we may be blocked by walls, attack everything
 					{
-						if (!ent.hasClass("Ranged") && !ent.hasClass("Ship"))
+						if (!ent.hasClasses(["Ranged", "Ship"]))
 							targetClasses = { "attack": ["Unit", "Structure"], "avoid": ["Ship"], "vetoEntities": veto };
 						else
 							targetClasses = { "attack": ["Unit", "Structure"], "vetoEntities": veto };
 					}
-					else if (!ent.hasClass("Ranged") && !ent.hasClass("Ship"))
+					else if (!ent.hasClasses(["Ranged", "Ship"]))
 						targetClasses = { "attack": targetClassesUnit.attack, "avoid": targetClassesUnit.avoid.concat("Ship"), "vetoEntities": veto };
-
-					Debug.print("unit attackMove (3): API3.SquareVectorDistance(this.targetPos, ent.position()) > 2500 -> this.targetPos=" + this.targetPos);
 					ent.attackMove(this.targetPos[0], this.targetPos[1], targetClasses);
 				}
 				else
@@ -1879,14 +1843,10 @@ PETRA.AttackPlan.prototype.update = function(gameState, events)
 							return valb - vala;
 						});
 						if (mStruct[0].hasClass("Gate"))
-						{
-							Debug.print("unit attack/capture(3): " + mStruct[0]);
 							ent.attack(mStruct[0].id(), false);
-						}
 						else
 						{
 							let rand = randIntExclusive(0, mStruct.length * 0.2);
-							Debug.print("unit attack/capture(4): " + mStruct[rand]);
 							ent.attack(mStruct[rand].id(), PETRA.allowCapture(gameState, ent, mStruct[rand]));
 						}
 					}
