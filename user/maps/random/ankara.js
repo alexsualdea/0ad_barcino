@@ -260,7 +260,7 @@ addElements([
 		"stay": [g_TileClasses.mapTile, 0],
 		"sizes": ["normal"],
 		"mixes": ["normal"],
-		"amounts": ["normal", "many")]
+		"amounts": ["normal", "many"]
 	},
 	{
 		"func": addSmallMetal,
