@@ -31,31 +31,18 @@ namespace BarcinoMapsUpdate
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateForm));
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // progressBar
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(25, 161);
+            this.progressBar.Location = new System.Drawing.Point(26, 302);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(451, 23);
             this.progressBar.TabIndex = 0;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUpdate.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonUpdate.Location = new System.Drawing.Point(376, 205);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(100, 39);
-            this.buttonUpdate.TabIndex = 2;
-            this.buttonUpdate.Text = "Quaeratur";
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textBox
             // 
@@ -68,8 +55,21 @@ namespace BarcinoMapsUpdate
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(449, 110);
+            this.textBox.Size = new System.Drawing.Size(449, 269);
             this.textBox.TabIndex = 3;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUpdate.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonUpdate.Location = new System.Drawing.Point(377, 340);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(100, 40);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.Text = "Quaeratur";
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // UpdateForm
             // 
@@ -77,13 +77,13 @@ namespace BarcinoMapsUpdate
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(511, 267);
-            this.Controls.Add(this.textBox);
+            this.ClientSize = new System.Drawing.Size(511, 392);
             this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.progressBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateForm";
-            this.Text = "Barcino maps";
+            this.Text = "Barcino mappae";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,8 +92,8 @@ namespace BarcinoMapsUpdate
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Button buttonUpdate;
     }
 }
 

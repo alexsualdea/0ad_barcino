@@ -33,6 +33,7 @@ namespace BarcinoMapsUpdate
         string myDocumentsPath;
         string modsPath;
         string githubUrl = $"https://api.github.com/repos/alexsualdea/0ad_barcino/contents/user/maps/random";
+        string githubUrlMod = $"https://api.github.com/repos/alexsualdea/0ad_barcino/contents/barcino";
 
         public UpdateForm()
         {
@@ -72,7 +73,7 @@ namespace BarcinoMapsUpdate
                 catch (Exception ex)
                 {
                     textBox.AppendText(ex.Message + Environment.NewLine);
-                    return false;
+                    throw new Exception(ex.Message, ex);
                 }
             }
         }
@@ -83,7 +84,7 @@ namespace BarcinoMapsUpdate
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("BarcinoMapsUpdate", "0.1"));
             httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Token", "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");
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Token", GithubToken.token);
             var contentsUrl = baseUrl;
             var contentsJson = await httpClient.GetStringAsync(contentsUrl);
             var contents = (Newtonsoft.Json.Linq.JArray)JsonConvert.DeserializeObject(contentsJson);
@@ -139,14 +140,73 @@ namespace BarcinoMapsUpdate
         }
 
 
+        public IEnumerable<string> AllFolders(string root)
+        {
+            var folders = new List<string> { root };
+
+            while (folders.Count > 0)
+            {
+                string folder = folders[folders.Count - 1];
+                folders.RemoveAt(folders.Count - 1);
+                yield return folder;
+                folders.AddRange(Directory.EnumerateDirectories(folder));
+            }
+        }
+
+        public List<string> AllFiles(IEnumerable<string> directories)
+        {
+            var files = new List<string>();
+
+            foreach (var dir in directories)
+            {
+                files.AddRange(Directory.GetFiles(dir));
+            }
+            return files;
+        }
+
+
+        private void CleanRemovedFiles(string modsPath, string subDirectory, IEnumerable<RemoteFile> remoteFiles)
+        {
+            string localPath = Path.Combine(modsPath, subDirectory);
+            IEnumerable<string> directories = AllFolders(localPath);
+            List<string> files = AllFiles(directories);
+
+            foreach (var file in files)
+            {
+                bool found = false;
+                foreach (var remotefile in remoteFiles)
+                {
+                    if (Path.GetRelativePath(modsPath, file).Replace(Path.DirectorySeparatorChar.ToString(), "/").CompareTo(remotefile.path) == 0)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    textBox.AppendText("Eximo " + Path.GetFileName(file) + Environment.NewLine);
+                    File.Delete(file);
+                }
+            }
+        }
+
         private async Task<bool> UpdateGitHub()
         {
             try
             {
-                IEnumerable<RemoteFile> files = await GetFileList(githubUrl);
-                progressBar.Maximum = files.Count();
+                IEnumerable<RemoteFile> files_map = await GetFileList(githubUrl);
+                IEnumerable<RemoteFile> files_mod = await GetFileList(githubUrlMod);
+                List<RemoteFile> all_files = new List<RemoteFile>();
+                all_files.AddRange(files_map);
+                all_files.AddRange(files_mod);
+
+                // remove mod local files not found in github
+                CleanRemovedFiles(modsPath, "barcino", files_mod);
+
+                // update github changes
+                progressBar.Maximum = all_files.Count();
                 progressBar.Value = 0;
-                foreach (var f in files)
+                foreach (var f in all_files)
                 {
                     string localPath = Path.GetFullPath(Path.Combine(modsPath, f.path));
                     if (File.Exists(localPath))
