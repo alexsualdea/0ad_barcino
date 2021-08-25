@@ -1,0 +1,13 @@
+**/.vscode
+**/.vs
+**/.idea
+public.*
+*.zip
+community_maps
+0ad_scenario_pack
+barcino_maps_update/GithubToken.cs
+**/bin
+**/obj
+**/skirmishes
+**/scenarios
+**/art
