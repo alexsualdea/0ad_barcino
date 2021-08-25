@@ -5,15 +5,7 @@
 		"Description" : "Play it nomad",
 		"Keywords": [],
 		"Preview" : "unknown.png",
-		"SupportedBiomes": [
-			"generic/temperate",
-			"generic/snowy",
-			"generic/desert",
-			"generic/alpine",
-			"generic/mediterranean",
-			"generic/tropic",
-			"generic/autumn"
-		],
+		"SupportedBiomes": "generic/",
 		"CircularMap" : true
 	}
 }

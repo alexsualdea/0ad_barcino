@@ -6,7 +6,9 @@
 		"Keywords": [],
 		"Preview" : "unknown.png",
 		"SupportedBiomes": [
-			"generic/desert"
+			"generic/sahara",
+			"generic/savanna",
+			"generic/nubia"
 		],
 		"CircularMap" : true
 	}

@@ -6,9 +6,9 @@
 		"Keywords": [],
 		"Preview" : "unknown.png",
 		"SupportedBiomes": [
-			"generic/tropic",
+			"generic/india",
 			"generic/temperate",
-			"generic/desert"
+			"generic/sahara"
 		],
 		"CircularMap" : true
 	}
