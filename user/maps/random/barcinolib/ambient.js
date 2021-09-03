@@ -4,7 +4,7 @@ function setAmbient(biome)
 {
     switch (biome)
     {
-        case "generic/snowy":
+        case "generic/arctic":
         {
             setSkySet("sunset 1");
             setSunRotation(randomAngle());
@@ -18,7 +18,7 @@ function setAmbient(biome)
             setWaterType("clap");
         }
         break;
-        case "generic/desert":
+        case "generic/sahara":
         {
             print("*****+* setting amient desert ******");
             setWindAngle(-0.43);
@@ -57,7 +57,7 @@ function setAmbient(biome)
             setWaterType("clap");
         }
         break;
-        case "generic/tropic":
+        case "generic/india":
         {
             setSunColor(0.6, 0.6, 0.6);
             setSunElevation(Math.PI / 3);
@@ -79,7 +79,7 @@ function setAmbient(biome)
             setSkySet("cirrus");
         }
         break;
-        case "generic/mediterranean":
+        case "generic/aegean":
         {
             setWaterColor(0.024, 0.212, 0.024);
             setWaterTint(0.133, 0.725, 0.855);

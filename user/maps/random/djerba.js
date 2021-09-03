@@ -46,7 +46,7 @@ var selectedBiome = undefined;
 //"generic/mediterranean",
 //"generic/tropic",
 //"generic/autumn"
-selectedBiome = "generic/desert";
+selectedBiome = "generic/sahara";
 
 Engine.SetProgress(10);
 
