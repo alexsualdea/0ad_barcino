@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Cres (Islands - Nomad)",
+		"Script" : "cres.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
