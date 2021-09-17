@@ -1,0 +1,14 @@
+{
+	"settings" : {
+		"Name" : "Kavir Desert",
+		"Script" : "kavir.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": [
+			"generic/sahara"
+		],
+		"CircularMap" : true
+	}
+}
+

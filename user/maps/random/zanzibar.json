@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Zanzibar (Nomad or 6p.Giant)",
+		"Script" : "zanzibar.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
