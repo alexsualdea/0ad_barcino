@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Royan",
+		"Script" : "royan.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
