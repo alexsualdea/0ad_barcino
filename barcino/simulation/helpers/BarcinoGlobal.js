@@ -190,7 +190,11 @@ class Barcino
         let team2 = this.balancing.getPlayerTeam(owner2);
         if (team1 != undefined && team2 != undefined && team1 == team2)
         {
-            return this.balancing.getTeamBalancing(team1)*2; // AQUI ver ese arbitrario *2
+            let teamBalancing=this.balancing.getTeamBalancing(team1);
+            if (teamBalancing==1)
+                return 1;
+            else
+                return teamBalancing*2; // AQUI ver ese arbitrario *2
         }
         else
         {
