@@ -117,7 +117,8 @@ Market.prototype.CalculateTraderGain = function(secondMarket, traderTemplate, tr
 	let distanceSq = firstMarketPosition.distanceToSquared(secondMarketPosition);
 	// We calculate gain as square of distance to encourage trading between remote markets
 	// and gainMultiplier corresponds to the gain for a 100m distance
-	gain.traderGain = Math.round(gainMultiplier * TradeGain(distanceSq, mapSize));
+	let barcino_market_modifier = global.barcino.getTradingProportionModifierForMarkets(this.entity, secondMarket); // AQUI
+	gain.traderGain = Math.round(gainMultiplier * TradeGain(distanceSq, mapSize)) * barcino_market_modifier;
 
 	gain.market1Owner = cmpMarket1Player.GetPlayerID();
 	gain.market2Owner = cmpMarket2Player.GetPlayerID();
@@ -134,9 +135,7 @@ Market.prototype.CalculateTraderGain = function(secondMarket, traderTemplate, tr
 		gain.market1Gain = Math.round(gain.traderGain * internationalBonus1);
 		gain.market2Gain = Math.round(gain.traderGain * internationalBonus2);
 	}
-
-	let barcino_market_modifier = global.barcino.getTradingProportionModifierForMarkets(this.entity, secondMarket);
-	return gain*barcino_market_modifier;
+	return gain;
 };
 
 Market.prototype.OnDiplomacyChanged = function(msg)
