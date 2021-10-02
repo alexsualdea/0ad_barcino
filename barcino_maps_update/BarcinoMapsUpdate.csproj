@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y $(SolutionDir)$(OutDir)*.* $(SolutionDir)InnoSetupProject\app\" />
+    <Exec Command="xcopy /Y &quot;$(SolutionDir)$(OutDir)*.*&quot; &quot;$(SolutionDir)InnoSetupProject\app\&quot;" />
   </Target>
 
 </Project>
