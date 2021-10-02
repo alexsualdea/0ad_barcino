@@ -180,8 +180,12 @@ class Barcino
      */
     getTradingProportionModifierForMarkets(market1, market2)
     {
-        let owner1 = QueryOwnerInterface(market1, IID_Player).GetPlayerID();
-        let owner2 = QueryOwnerInterface(market2, IID_Player).GetPlayerID();
+        let cmpMarket1Player = QueryOwnerInterface(market1);
+        let cmpMarket2Player = QueryOwnerInterface(market2);
+        if (!cmpMarket1Player || !cmpMarket2Player)
+            return 1;
+        let owner1 =  cmpMarket1Player.GetPlayerID();
+        let owner2 =  cmpMarket2Player.GetPlayerID();
         let team1 = this.balancing.getPlayerTeam(owner1);
         let team2 = this.balancing.getPlayerTeam(owner2);
         if (team1 != undefined && team2 != undefined && team1 == team2)
