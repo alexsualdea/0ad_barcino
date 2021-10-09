@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Lake Nasser",
+		"Script" : "nasser.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
