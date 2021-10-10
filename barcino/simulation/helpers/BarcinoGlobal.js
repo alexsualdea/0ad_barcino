@@ -194,7 +194,7 @@ class Barcino
             if (teamBalancing==1)
                 return 1;
             else
-                return teamBalancing*2; // AQUI ver ese arbitrario *2
+                return teamBalancing; 
         }
         else
         {
