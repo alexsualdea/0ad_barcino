@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Haikou (Hainan Island)",
+		"Script" : "haikou.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
