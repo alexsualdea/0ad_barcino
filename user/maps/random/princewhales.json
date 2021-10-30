@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Prince of Whales Island",
+		"Script" : "princewhales.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+

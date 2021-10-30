@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Taymyrsky Dolgano",
+		"Script" : "taymyrsky.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
