@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Vannes",
+		"Script" : "vannes.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
