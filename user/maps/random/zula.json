@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Zula",
+		"Script" : "zula.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
