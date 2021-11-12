@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Debre Markos",
+		"Script" : "debremarkos.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
