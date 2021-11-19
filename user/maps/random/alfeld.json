@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Alfeld (leine)",
+		"Script" : "alfeld.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+

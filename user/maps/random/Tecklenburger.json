@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Tecklenburger Land Region",
+		"Script" : "Tecklenburger.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
