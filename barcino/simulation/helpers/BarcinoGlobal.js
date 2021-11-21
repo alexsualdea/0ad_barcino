@@ -186,6 +186,8 @@ class Barcino
             return 1;
         let owner1 =  cmpMarket1Player.GetPlayerID();
         let owner2 =  cmpMarket2Player.GetPlayerID();
+        if (!owner1 || !owner2)
+            return 1;
         let team1 = this.balancing.getPlayerTeam(owner1);
         let team2 = this.balancing.getPlayerTeam(owner2);
         if (team1 != undefined && team2 != undefined && team1 == team2)
