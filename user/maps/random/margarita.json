@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Isla de Margarita (Nomad for 8p)",
+		"Script" : "margarita.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+

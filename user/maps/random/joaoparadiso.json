@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "São João do Paraíso",
+		"Script" : "joaoparadiso.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
