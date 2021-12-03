@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Altınyayla",
+		"Script" : "Altınyayla.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+

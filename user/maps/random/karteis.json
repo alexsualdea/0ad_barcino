@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Karteis",
+		"Script" : "karteis.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+

@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Liezen",
+		"Script" : "liezen.js",
+		"Description" : "",
+		"Keywords": [],
+		"Preview" : "unknown.png",
+		"SupportedBiomes": "generic/",
+		"CircularMap" : true
+	}
+}
+
